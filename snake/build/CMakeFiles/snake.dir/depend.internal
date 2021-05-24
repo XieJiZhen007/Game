@@ -3,6 +3,7 @@
 
 CMakeFiles/snake.dir/src/Game.cpp.o
  /home/shrimp/data/game/snake/src/Game.cpp
+ /home/shrimp/data/game/snake/src/Game.h
 CMakeFiles/snake.dir/src/main.cpp.o
  /home/shrimp/data/game/snake/src/Game.h
  /home/shrimp/data/game/snake/src/main.cpp
