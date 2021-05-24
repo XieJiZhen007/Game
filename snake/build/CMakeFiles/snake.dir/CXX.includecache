@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/shrimp/data/game/snake/src/Game.cpp
+
+/home/shrimp/data/game/snake/src/Game.h
+SDL2/SDL.h
+-
+SDL2/SDL_image.h
+-
+
+/home/shrimp/data/game/snake/src/main.cpp
+Game.h
+/home/shrimp/data/game/snake/src/Game.h
+iostream
+-
+

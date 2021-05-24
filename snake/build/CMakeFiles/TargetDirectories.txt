@@ -1,0 +1,3 @@
+/home/shrimp/data/game/snake/build/CMakeFiles/rebuild_cache.dir
+/home/shrimp/data/game/snake/build/CMakeFiles/edit_cache.dir
+/home/shrimp/data/game/snake/build/CMakeFiles/snake.dir
