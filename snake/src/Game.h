@@ -3,6 +3,7 @@
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <SDL2/SDL_ttf.h>
 #include <vector>
 
 const int X = 0;
@@ -52,6 +53,8 @@ private:
 
     int snake_head[2];
     int food[2];
+
+    TTF_Font* score;
 
     void MoveSnake();
     int  InSnake(int x, int y);

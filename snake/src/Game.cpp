@@ -1,5 +1,6 @@
 #include "Game.h"
 #include <math.h>
+#include <time.h>
 
 Game::Game():isRunning(true), mWindow(nullptr), mRenderer(nullptr) {
     // x1 = 400;
@@ -10,6 +11,7 @@ Game::Game():isRunning(true), mWindow(nullptr), mRenderer(nullptr) {
     mTex = nullptr;
     snake_dir = right;
     snake_len = SNAKE_INIT_LEN;
+    score = nullptr;
 }
 
 Game::~Game() {
@@ -34,6 +36,13 @@ int Game::Init() {
         return 0;
     }
 
+    TTF_Init();
+    score = TTF_OpenFont("../assets/himalaya.ttf", 24);
+    if (!score) {
+        SDL_Log("Failed to get ttf: %s", SDL_GetError());
+        return 0;
+    }
+
     /** init snake */
     for (int i = 0; i < SNAKE_INIT_LEN; i++) {
         std::vector<int> pos = {START_X - i * BODY_W, START_Y};
@@ -44,10 +53,12 @@ int Game::Init() {
     snake_head[Y] = snake_body[0][Y];
     for (auto i : snake_body) {
         for (auto j : i) {
-            SDL_Log("%d\n", j);
+            // SDL_Log("%d\n", j);
         }
     }
     // LoadData();
+
+    srand(time(nullptr));
 
     mTicks = SDL_GetTicks();
 
@@ -99,7 +110,7 @@ void Game::Input() {
 }
 
 void Game::Update() {
-    SDL_Log("in update");
+    // SDL_Log("in update");
     while (!SDL_TICKS_PASSED(SDL_GetTicks(), mTicks + 16));
     float deltaTime = (SDL_GetTicks() - mTicks) / 1000.0f;
     if (deltaTime > 0.05)
@@ -120,7 +131,7 @@ void Game::Update() {
             snake_head[X] += BODY_W;
             break;
     }
-    SDL_Log("X: %d, Y: %d", snake_head[X], snake_head[Y]);
+    // SDL_Log("X: %d, Y: %d", snake_head[X], snake_head[Y]);
 
     for (int i = 1; i < snake_len; i++) {
         if (snake_head[X] == snake_body[i][X] && snake_head[Y] == snake_body[i][Y]) {
@@ -163,7 +174,7 @@ void Game::Update() {
 
 void Game::Output() {
     // static int x = 0, y = 0;
-    SDL_Log("in output");
+    // SDL_Log("in output");
     SDL_SetRenderDrawColor(mRenderer, 0, 0, 0, 255);
     SDL_RenderClear(mRenderer);
 
@@ -172,6 +183,12 @@ void Game::Output() {
     // SDL_RenderDrawRect(mRenderer, &r);
     // SDL_RenderDrawLine(mRenderer, 0, 0, x, y);
     SDL_RenderDrawLine(mRenderer, SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+
+    SDL_Color white = {255, 255, 255};
+    SDL_Surface* sufMes = TTF_RenderText_Solid(score, "hello", white);
+    SDL_Texture* Mes = SDL_CreateTextureFromSurface(mRenderer, sufMes);
+    SDL_Rect MesRect = {600, 300, 100, 100};
+    SDL_RenderCopy(mRenderer, Mes, nullptr, &MesRect);
 
     // x = x % 800 + 10;
     // y = y % 600 + 10;
@@ -223,7 +240,7 @@ void Game::Draw_Snake() {
     // SDL_Log("Draw Snake");
     for (int i = 0; i < snake_len; i++) {
         // SDL_Log("Draw Snake loop, i: %d", i);
-        SDL_Log("Draw Snake loop, X: %d, Y: %d", snake_body[i][X],snake_body[i][Y]);
+        // SDL_Log("Draw Snake loop, X: %d, Y: %d", snake_body[i][X],snake_body[i][Y]);
         SDL_Rect body = {snake_body[i][X], snake_body[i][Y], BODY_W, BODY_H};
         SDL_RenderDrawRect(mRenderer, &body);
     }
