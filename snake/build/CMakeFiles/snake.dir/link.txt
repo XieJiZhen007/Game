@@ -1,1 +1,1 @@
-/usr/bin/c++    -rdynamic CMakeFiles/snake.dir/src/Game.cpp.o CMakeFiles/snake.dir/src/main.cpp.o  -o snake  -lSDL2 -lSDL2main -lSDL2_image 
+/usr/bin/c++    -rdynamic CMakeFiles/snake.dir/src/Game.cpp.o CMakeFiles/snake.dir/src/main.cpp.o  -o snake  -lSDL2 -lSDL2main -lSDL2_image -lSDL2_ttf 

@@ -11,6 +11,8 @@ Game.h
 /home/shrimp/data/game/snake/src/Game.h
 math.h
 -
+time.h
+-
 
 /home/shrimp/data/game/snake/src/Game.h
 SDL2/SDL.h

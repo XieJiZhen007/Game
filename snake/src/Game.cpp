@@ -24,6 +24,11 @@ int Game::Init() {
         return 0;
     }
 
+    if (TTF_Init() != 0) {
+        SDL_Log("failed to init ttf: %s", SDL_GetError());
+        return 0;
+    }
+
     mWindow = SDL_CreateWindow("title", 100, 100, 800, 600, 0);
     if (!mWindow) {
         SDL_Log("Failed to create window\n");
@@ -33,13 +38,6 @@ int Game::Init() {
     mRenderer = SDL_CreateRenderer(mWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
     if (!mRenderer) {
         SDL_Log("Failed to create renderer\n: %s", SDL_GetError());
-        return 0;
-    }
-
-    TTF_Init();
-    score = TTF_OpenFont("../assets/himalaya.ttf", 24);
-    if (!score) {
-        SDL_Log("Failed to get ttf: %s", SDL_GetError());
         return 0;
     }
 
@@ -56,7 +54,7 @@ int Game::Init() {
             // SDL_Log("%d\n", j);
         }
     }
-    // LoadData();
+    LoadData();
 
     srand(time(nullptr));
 
@@ -75,15 +73,13 @@ void Game::Loop() {
         Input();
         Update();
         Output();
-        // SDL_Delay(500);
     }
-    // Output();
 }
 
 void Game::Shutdown() {
+    SDL_DestroyTexture(mTex);
     SDL_DestroyRenderer(mRenderer);
     SDL_DestroyWindow(mWindow);
-    // SDL_Delay(2000);
 }
 
 void Game::Input() {
@@ -206,10 +202,11 @@ void Game::Output() {
 
 void Game::LoadData() {
     mTex = IMG_LoadTexture(mRenderer, "../assets/abc.png");
-
-    // if (mTex) {
-    //     SDL_Log("png load success!\n");
-    // }
+    score = TTF_OpenFont("../assets/simhei.ttf", 24);
+    if (!score) {
+        SDL_Log("failed to load ttf: %s", SDL_GetError());
+        return;
+    }
 }
 
 void Game::MoveSnake() {
