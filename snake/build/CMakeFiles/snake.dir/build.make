@@ -60,28 +60,28 @@ include CMakeFiles/snake.dir/flags.make
 CMakeFiles/snake.dir/src/Game.cpp.o: CMakeFiles/snake.dir/flags.make
 CMakeFiles/snake.dir/src/Game.cpp.o: ../src/Game.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shrimp/data/game/snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/snake.dir/src/Game.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/snake.dir/src/Game.cpp.o -c /home/shrimp/data/game/snake/src/Game.cpp
+	/bin/x86_64-linux-gnu-g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/snake.dir/src/Game.cpp.o -c /home/shrimp/data/game/snake/src/Game.cpp
 
 CMakeFiles/snake.dir/src/Game.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/snake.dir/src/Game.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shrimp/data/game/snake/src/Game.cpp > CMakeFiles/snake.dir/src/Game.cpp.i
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shrimp/data/game/snake/src/Game.cpp > CMakeFiles/snake.dir/src/Game.cpp.i
 
 CMakeFiles/snake.dir/src/Game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/snake.dir/src/Game.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shrimp/data/game/snake/src/Game.cpp -o CMakeFiles/snake.dir/src/Game.cpp.s
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shrimp/data/game/snake/src/Game.cpp -o CMakeFiles/snake.dir/src/Game.cpp.s
 
 CMakeFiles/snake.dir/src/main.cpp.o: CMakeFiles/snake.dir/flags.make
 CMakeFiles/snake.dir/src/main.cpp.o: ../src/main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shrimp/data/game/snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/snake.dir/src/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/snake.dir/src/main.cpp.o -c /home/shrimp/data/game/snake/src/main.cpp
+	/bin/x86_64-linux-gnu-g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/snake.dir/src/main.cpp.o -c /home/shrimp/data/game/snake/src/main.cpp
 
 CMakeFiles/snake.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/snake.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shrimp/data/game/snake/src/main.cpp > CMakeFiles/snake.dir/src/main.cpp.i
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shrimp/data/game/snake/src/main.cpp > CMakeFiles/snake.dir/src/main.cpp.i
 
 CMakeFiles/snake.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/snake.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shrimp/data/game/snake/src/main.cpp -o CMakeFiles/snake.dir/src/main.cpp.s
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shrimp/data/game/snake/src/main.cpp -o CMakeFiles/snake.dir/src/main.cpp.s
 
 # Object files for target snake
 snake_OBJECTS = \
